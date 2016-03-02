@@ -1,0 +1,197 @@
+@charset "utf-8";
+
+@import url(https://fonts.googleapis.com/css?family=Rubik+Mono+One&subset=latin,cyrillic);
+*{margin:0;padding:0;}
+body{
+	
+	position:relative;
+	background:@color-background;
+	text-align:center;
+}
+/*_______________________________________________________--------________________________Variables________________*/
+@color-main: #6e9eb9;
+
+@color-background: #d8e8f0;
+
+.radius(@1,@2,@3,@4,@border-thickness,@color){
+	border:solid @border-thickness @color;
+	-moz-border-radius: @1 @2 @3 @4;
+	-webkit-border-radius: @1 @2 @3 @4;
+	-khtml-border-radius: @1 @2 @3 @4;
+	border-radius: @1 @2 @3 @4;
+	behavior: url(border-radius.htc);
+}
+.transition(@value){
+	-webkit-transition: all @value ease; 
+   -moz-transition: all @value ease; 
+   -o-transition: all @value ease; 
+   transition: all @value ease;
+}
+.img-param(@top,@left,@margin-left,@z-index,@opacity){
+	position:absolute;
+	top:@top;
+	left:@left;
+	margin-left:@margin-left;
+	z-index:@z-index;
+	opacity:@opacity;
+}
+.font-site(@font-family,@font-size,@font-weight,@color){
+	font-family:@font-family;
+	font-size:@font-size;
+	font-weight:@font-weight;
+	color:@color;
+}
+
+/*_______________________________________________________________________________________________________Img_______________*/
+#cloud{
+	.img-param(30px,50%,-370px,-11,0);
+}
+#back{
+	.img-param(30px,50%,-410px,-10,0);
+}
+#houses{
+	.img-param(-5000px,50%,-770px,-2,1);
+}
+#lamp{
+	.img-param(20px,-500%,-650px,-1,1);
+}
+#bush{
+	.img-param(150px,500%,350px,-1,1);
+}
+#car{
+	.img-param(220px,50%,500px,-3,0);
+}
+
+
+
+/*__________________________________________________________________________________________________Content Elements____________________*/
+
+h1{
+	.font-site(Arial,30px,400,@color-main);
+	display:inline-block;
+	margin-top:300px;
+	opacity:0;
+	padding-bottom:20px;
+	border-bottom:solid 2px @color-main;
+}
+ul{
+	margin:140px 0 50px ;
+	opacity:0;
+	z-index:19;
+}
+li{
+	list-style:none;
+	display:block;
+	height:80px;
+	line-height:80px;
+	
+}
+a{
+	.font-site(Arial,24px,100,@color-main);
+	.transition(0.5s);
+	text-decoration:none;	
+}
+a:hover{
+	.transition(0.5s);
+	color:#ff8244;	
+}
+.text{
+	.font-site(Arial,14px,100,@color-main);
+	opacity:0;
+	width:1100px;
+	margin:auto;
+}
+/*_________________________________________________________________________________________________Label Stock_____________________*/
+#con{
+	.img-param(200px,50%,-77px,20,1);
+	.radius(20px, 20px, 20px, 20px, 0, #ffffff);
+	width:150px;
+	height:150px;
+	padding:6px;
+	background:@color-background;	
+}
+#wraper{
+	.radius(20px, 20px, 20px, 20px, 0, #ffffff);
+	position:relative;
+	width:150px;
+	height:150px;
+	background:#d8e8f0;
+}
+#head{
+	.img-param(0,-10000px,0,0,1);
+	.font-site('Rubik Mono One',30px,100,@color-main);
+	.radius(16px, 16px, 0px, 0px, 0, #ffffff);
+	width:150px;
+	height:70px;
+	background:#ffffff;	
+	text-align:center;
+	line-height:70px;
+}
+/*_____________________________________________________________________________________________________________Runer__*/
+#slide{
+	.img-param(70px,10000px,0,0,1);
+	width:150px;
+	height:10px;
+	background:#ffffff;
+}
+#slide_runer{
+	position:relative;
+	width:140px;
+	margin:0 5px;
+	border-top:solid 1px @color-main;
+}
+#runer{
+	.img-param(-3px,0,0,0,1);
+	.radius(3px, 3px, 3px, 3px, 0, #ffffff);
+	width:6px;
+	height:6px;
+	background:@color-main;
+}
+/*____________________________*/
+#discount{
+	.img-param(80px,-10000px,0,0,1);
+	.radius(0px, 0px, 16px, 16px, 0, #ffffff);
+	.font-site('Rubik Mono One',30px,100,#ffffff);
+	width:150px;
+	height:70px;
+	background-color:@color-main;
+	text-align:center;
+	line-height:70px;
+}
+
+
+/*_______________________________________________________________________________________Label Elements Close and Details___*/
+#close{
+	.img-param(-80px,160px,0,0,0);
+	.radius(23px, 23px, 23px, 23px, 5px, @color-main);
+	width:36px;
+	height:36px;
+	background-image:url(../Img/close_img.jpg);
+	background-position: -2px -6px;
+	cursor:pointer;
+}
+#close:hover{
+	background-image:url(../Img/close_img.jpg);
+	background-position: -2px -87px;
+}
+#details{
+	.img-param(95px,-10px,0,0,0);
+	.font-site(Arial,18px,bold,#FFFFFF);
+	.radius(20px, 20px, 20px, 20px, 0, #ffffff);
+	.transition(0.2s);
+	width:110px;
+	height:60px;
+	line-height:60px;
+	background:@color-main;
+	cursor:pointer;
+}
+#details:hover{
+	.transition(0.5s);
+	background:#FFFFFF;
+	color:@color-main;
+}
+
+
+
+
+
